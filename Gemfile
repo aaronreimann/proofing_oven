@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'haml'
 gem 'sass'
 gem 'rails', '3.0.7'
-gem 'sqlite3'
+gem 'mysql'
 
 group :development, :test do
   gem 'capybara'
