@@ -4,6 +4,7 @@ gem 'haml'
 gem 'sass'
 gem 'rails', '3.0.7'
 gem 'mysql'
+gem 'devise', '1.3.4'
 
 group :development, :test do
   gem 'capybara'

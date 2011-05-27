@@ -19,4 +19,9 @@
         \|
         = link_to "Log in", "#"
     #content
+      - if flash.any?
+        .flash
+          - flash.each do |type, message|
+            %div(id = "flash_#{type}")= message
+      
       = yield
