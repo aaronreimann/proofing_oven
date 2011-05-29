@@ -5,6 +5,7 @@ gem 'sass'
 gem 'rails', '3.0.7'
 gem 'pg'
 gem 'devise', '1.3.4'
+gem 'dynamic_form'
 
 group :development, :test do
   gem 'capybara'
