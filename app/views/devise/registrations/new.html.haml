@@ -1,0 +1,16 @@
+= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+  = f.error_messages
+  %h1 Sign Up
+  %fieldset#sign_up
+    %dl
+      %dt= f.label :email
+      %dd= f.text_field :email
+      %dt= f.label :password
+      %dd= f.password_field :password
+      %dt= f.label :password_confirmation
+      %dd= f.password_field :password_confirmation
+  %fieldset.actions
+    = f.submit "Sign Up"
+    %p
+      = link_to 'Sign In', '#'
+      = link_to 'Forgot Password', '#'
