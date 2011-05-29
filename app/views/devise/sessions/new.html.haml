@@ -1,0 +1,15 @@
+= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  %h1 Sign In
+  %fieldset#sign_in
+    %dl
+      %dt= f.label :email
+      %dd= f.text_field :email
+      %dt= f.label :password
+      %dd= f.password_field :password
+      - if devise_mapping.rememberable?
+        %p
+          = f.check_box :remember_me
+          = f.label :remember_me
+  %fieldset.actions
+    = f.submit "Sign in"
+    = link_to 'Forgot Password', '#'
