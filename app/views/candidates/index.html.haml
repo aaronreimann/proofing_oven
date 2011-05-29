@@ -1,0 +1,50 @@
+.search
+  %form(action="" method="post")
+    %fieldset
+      %input(type="text")
+      %input(type="submit" value="Search")
+  = link_to "Add New Candidate", "#", class: "button add"
+
+%form.filters(action="" method="post")
+  %fieldset
+    %dl
+      %dt
+        %label Skill
+      %dd
+        %select
+          %option Display All
+    %dl
+      %dt
+        %label Status
+      %dd
+        %select
+          %option Display All
+  %fieldset.actions
+    %input(type="submit" value="Filter")
+    = link_to "reset", "#"
+
+%table.standard
+  %thead
+    %tr
+      - ["Name", "Phone", "Email", "Github", "Twitter", "Local", "Willing to Relocate", "Status", "Added On"].each do |th|
+        %th= th
+  %tbody
+    - candidates.each do |candidate|
+      %tr
+        %td= candidate.full_name
+        %td= candidate.phone
+        %td= candidate.email
+        %td= candidate.github
+        %td= candidate.twitter
+        %td= candidate.local? ? "Yes" : "No"
+        %td= candidate.willing_to_relocate? ? "Yes" : "No"
+        %td= candidate.status
+        %td= candidate.created_at
+
+.pagination
+  = link_to "Prev", "#", class: "prev"
+  %ul
+    %li.active= link_to "1", "#"
+    - 4.times do |i|
+      %li= link_to i + 2, "#"
+  = link_to "Next", "#", class: "next"

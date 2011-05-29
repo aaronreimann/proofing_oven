@@ -4,6 +4,7 @@ gem 'haml'
 gem 'sass'
 gem 'rails', '3.0.7'
 gem 'pg'
+gem 'decent_exposure'
 gem 'devise', '1.3.4'
 gem 'dynamic_form'
 
