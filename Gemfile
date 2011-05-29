@@ -11,6 +11,7 @@ group :development, :test do
   gem 'capybara'
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'email_spec'
   gem 'fabrication'
   gem 'fuubar'
   gem 'fuubar-cucumber'
