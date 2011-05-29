@@ -16,6 +16,7 @@
       .session
         - if current_user
           %p Signed in as #{current_user.full_name}
+          = link_to "Sign out", destroy_user_session_path
         - else
           = link_to "Sign up", "#"
           \|
