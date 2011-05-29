@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'haml'
 gem 'sass'
 gem 'rails', '3.0.7'
-gem 'mysql'
+gem 'pg'
 gem 'devise', '1.3.4'
 
 group :development, :test do
