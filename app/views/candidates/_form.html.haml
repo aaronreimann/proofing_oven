@@ -1,0 +1,41 @@
+%fieldset
+  %dl
+    %dt= f.label :first_name
+    %dd= f.text_field :first_name
+    %dt= f.label :last_name
+    %dd= f.text_field :last_name
+    %dt= f.label :email
+    %dd= f.text_field :email
+    %dt= f.label :phone
+    %dd= f.text_field :phone
+    %dt= f.label :status
+    %dd= f.select :status, Candidate::STATUSES
+    %dt= f.label :github
+    %dd= f.text_field :github
+    %dt= f.label :twitter
+    %dd= f.text_field :twitter
+    %dt
+      %label Profile Image
+    %dd
+      %input(type="file")
+    %dt
+      %label Resume
+    %dd
+      %input(type="file")
+    %dt
+      %label Supporting files
+    %dd
+      %ul
+        %li
+          %input.multiple(type="file" name="supporting_file[0]")
+    %dt
+      %label Note
+    %dd
+      %textarea(rows="8" cols="80")
+  %label.checkbox(for="candidate_local")
+    Local
+    = f.check_box :local
+
+  %label.checkbox(for="candidate_willing_to_relocate")
+    Willing to relocate
+    = f.check_box :willing_to_relocate

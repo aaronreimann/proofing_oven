@@ -1,7 +1,7 @@
 %section#candidate_show
   #main
     %header
-      = link_to "Edit Candidate", "#", class: "edit"
+      = link_to "Edit Candidate", edit_candidate_path(candidate), class: "edit"
       %h1= candidate.full_name
       %dl.small
         %dt Status
