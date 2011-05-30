@@ -2,8 +2,9 @@ class CandidatesController < ApplicationController
   expose(:candidate)
   expose(:candidates) { Candidate.scoped }
 
-  def update
+  def create
     flash[:notice] = "Candidate saved successfully"
     respond_with candidate.tap(&:save)
   end
+  alias update create
 end

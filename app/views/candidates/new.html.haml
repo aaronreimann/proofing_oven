@@ -1,0 +1,6 @@
+= form_for candidate do |f|
+  %h1 Add New Candidate
+  = render partial: 'form', locals: { f: f }
+  %fieldset.actions
+    = f.submit "Add Candidate"
+    %a(href="#") Cancel
