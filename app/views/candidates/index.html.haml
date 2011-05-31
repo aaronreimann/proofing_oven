@@ -5,7 +5,7 @@
       %input(type="submit" value="Search")
   = link_to "Add New Candidate", new_candidate_path, class: "button add"
 
-%form.filters(action="" method="post")
+= form_for :filters, url: filter_candidates_path, html: { class: "filters" } do |f|
   %fieldset
     %dl
       %dt
@@ -14,13 +14,10 @@
         %select
           %option Display All
     %dl
-      %dt
-        %label Status
-      %dd
-        %select
-          %option Display All
+      %dt= f.label :status
+      %dd= f.select :status, options_for_select(["Display All"] + Candidate::STATUSES, filtered.status)
   %fieldset.actions
-    %input(type="submit" value="Filter")
+    = f.submit "Filter"
     = link_to "reset", "#"
 
 %table.standard
